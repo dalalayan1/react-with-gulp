@@ -1,0 +1,34 @@
+{
+  "name": "react-with-gulp",
+  "version": "1.0.0",
+  "description": "run react in your app with gulpFile",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalalayan1/react-with-gulp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalalayan1/react-with-gulp/issues"
+  },
+  "homepage": "https://github.com/dalalayan1/react-with-gulp#readme",
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babelify": "*",
+    "browserify": "*",
+    "gulp": "*",
+    "vinyl-source-stream": "*"
+  }
+}
