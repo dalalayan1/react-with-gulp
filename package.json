@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "start": "npm run clean && gulp && npm run server",
     "build": "npm run clean && gulp",
+    "server": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,7 +30,10 @@
     "babel-preset-react": "*",
     "babelify": "*",
     "browserify": "*",
+    "express": "*",
     "gulp": "*",
+    "gulp-less": "*",
+    "open": "*",
     "vinyl-source-stream": "*"
   }
 }
