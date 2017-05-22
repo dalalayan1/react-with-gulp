@@ -6,7 +6,9 @@ var gulp = require('gulp'),
  
 var gulpStylelint = require('gulp-stylelint');
 
-gulp.task('lint-css', function () {
+var gulpEslint = require('gulp-eslint');
+
+gulp.task('css-lint', function () {
     return gulp.src('dist/css/*.css')
     .pipe(gulpStylelint({
       failAfterError: false,
@@ -14,6 +16,13 @@ gulp.task('lint-css', function () {
         {formatter: 'string', console: true}
       ]
     }));
+});
+
+gulp.task('es-lint', () => { 
+    return gulp.src(['dist/js/*.js','node_modules']) 
+        .pipe(gulpEslint())
+        .pipe(gulpEslint.format()) 
+        .pipe(gulpEslint.failAfterError());
 });
 
 gulp.task('less', function () {
@@ -35,4 +44,4 @@ gulp.task("copy",function(){
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default",["build","copy","less"]);
+gulp.task("default",["build","copy","less","es-lint"]);

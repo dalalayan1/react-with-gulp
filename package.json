@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "start": "npm run clean && gulp && npm run lint && npm run server",
     "build": "npm run clean && gulp",
-    "lint" : "gulp lint-css",
+    "lint": "gulp es-lint && gulp css-lint",
     "server": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +33,8 @@
     "browserify": "*",
     "express": "*",
     "gulp": "*",
+    "gulp-eslint": "*",
+    "gulp-stylelint": "*",
     "gulp-less": "*",
     "gulp-stylelint": "*",
     "open": "*",
