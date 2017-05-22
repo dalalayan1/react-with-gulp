@@ -4,6 +4,18 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     less = require('gulp-less');
  
+var gulpStylelint = require('gulp-stylelint');
+
+gulp.task('lint-css', function () {
+    return gulp.src('dist/css/*.css')
+    .pipe(gulpStylelint({
+      failAfterError: false,
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
+});
+
 gulp.task('less', function () {
     gulp.src('./src/styles/*.less')
         .pipe(less())
@@ -23,4 +35,4 @@ gulp.task("copy",function(){
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default",["build","sass","less"]);
+gulp.task("default",["build","copy","less"]);

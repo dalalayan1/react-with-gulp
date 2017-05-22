@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "npm run clean && gulp && npm run server",
+    "start": "npm run clean && gulp && npm run lint && npm run server",
     "build": "npm run clean && gulp",
+    "lint" : "gulp lint-css",
     "server": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +34,7 @@
     "express": "*",
     "gulp": "*",
     "gulp-less": "*",
+    "gulp-stylelint": "*",
     "open": "*",
     "vinyl-source-stream": "*"
   }
