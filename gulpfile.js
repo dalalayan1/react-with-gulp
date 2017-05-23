@@ -9,7 +9,7 @@ var gulpStylelint = require('gulp-stylelint');
 var gulpEslint = require('gulp-eslint');
 
 gulp.task('css-lint', function () {
-    return gulp.src('dist/css/*.css')
+    return gulp.src(['src/styles/*.less','src/styles/*.scss'])
     .pipe(gulpStylelint({
       failAfterError: false,
       reporters: [
@@ -19,7 +19,7 @@ gulp.task('css-lint', function () {
 });
 
 gulp.task('es-lint', () => { 
-    return gulp.src(['dist/js/*.js','node_modules']) 
+    return gulp.src('src/**/*.js') 
         .pipe(gulpEslint())
         .pipe(gulpEslint.format()) 
         .pipe(gulpEslint.failAfterError());
